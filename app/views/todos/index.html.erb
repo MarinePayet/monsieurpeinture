@@ -1,0 +1,15 @@
+ <div class="container">
+  <p> TODOS LIST</p>
+  <p><input type="checkbox" id="all-todos" name="all-todos">
+  <label for="all-todos">Check all</label></p>
+  <ol>
+    <% @todos.each do |todo| %>
+      <input type="checkbox" id="todos" name="todos">
+      <label for="todos"><%= todo.title %></label>
+      <ul>
+        <li><%= todo.description %></li>
+        <li><%= todo.duedate %></li>
+      </ul>
+    <% end %>
+  </ol>
+</div>
