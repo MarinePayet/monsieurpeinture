@@ -1,0 +1,19 @@
+<div class="container">
+    <div>
+      <%= simple_form_for [@user, @todo] do |f| %>
+        <%= f.input :title, :label=> "Title of your todo", input_html: { class: "input-bar"}, wrapper_html: { class: "label-text"}, required: true %>
+
+        <%= f.input :description, :label=> "Give a little more details :", input_html: { class: "input-bar"}, wrapper_html: { class: "label-text"} %>
+        <%= f.input :duedate, :label=> "Due date", input_html: { min: '0', step: 'any', class: "input-bar"}, wrapper_html: { class: "label-text"} %>
+
+        <br>
+        <div class="btn-center">
+          <% if @todo.id %>
+            <%= f.submit "Edit Todo", class: "btn-other btn-ghost2 btn-form" %>
+          <% else %>
+            <%= f.submit "Add Todo", class: "btn-other btn-ghost2 btn-form" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
